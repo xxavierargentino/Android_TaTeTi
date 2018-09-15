@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="un_jugador">1 player</string>
+    <string name="dos_jugadores">2 players</string>
+    <string name="facil">Easy</string>
+    <string name="normal">Normal</string>
+    <string name="imposible">Insane</string>
+    <string name="casilla">Tile</string>
+    <string name="circulos_gana">Circles Win!</string>
+    <string name="cruces_gana">Crosses Win!</string>
+    <string name="empate">Tile!</string>
+
+
+</resources>

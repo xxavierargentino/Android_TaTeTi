@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaTeTi</string>
+    <string name="un_jugador">1 jugador</string>
+    <string name="dos_jugadores">2 jugadores</string>
+    <string name="facil">Facil</string>
+    <string name="normal">Normal</string>
+    <string name="imposible">Imposible</string>
+    <string name="casilla">Casilla</string>
+    <string name="circulos_gana">Circulos Ganan!</string>
+    <string name="cruces_gana">Cruces Ganan!</string>
+    <string name="empate">Empate!</string>
+</resources>
