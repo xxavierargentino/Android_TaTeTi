@@ -35,6 +35,9 @@ public class MainActivity extends Activity {
     }
 
     public void toque(View miCasilla){
+        if (partida == null){
+            return;
+        }
         int casilla = 0;
         for (int i= 0; i < 9; i++ ){
             if (CASILLAS[i] == miCasilla.getId() ){
@@ -42,10 +45,21 @@ public class MainActivity extends Activity {
                 break;
             }
         }
+        this.marca(casilla);
+        /*
         Toast toast = Toast.makeText(this,"Has Presionado la casilla: " + casilla,Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER,0,0);
         toast.show();
+*/
+    }
 
+    private void marca(int num_casilla){
+        ImageView imagen = (ImageView)(findViewById(CASILLAS[num_casilla]));
+        if(partida.jugador == 1){
+            imagen.setImageResource(R.drawable.circulo_48x48);
+        }else{
+            imagen.setImageResource(R.drawable.cruz_48x48);
+        }
     }
 
     public void aJugar(View vista){
