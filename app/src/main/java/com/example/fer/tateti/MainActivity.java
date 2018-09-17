@@ -45,6 +45,9 @@ public class MainActivity extends Activity {
                 break;
             }
         }
+        partida.jugador = 1;
+        this.marca(casilla);
+        casilla = partida.ia();
         this.marca(casilla);
         /*
         Toast toast = Toast.makeText(this,"Has Presionado la casilla: " + casilla,Toast.LENGTH_LONG);
