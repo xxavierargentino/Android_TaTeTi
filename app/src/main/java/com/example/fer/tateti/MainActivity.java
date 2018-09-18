@@ -35,17 +35,31 @@ public class MainActivity extends Activity {
     }
 
     public void toque(View miCasilla){
-        if (partida == null){
-            return;
-        }
-        int casilla = 0;
-        for (int i= 0; i < 9; i++ ){
-            if (CASILLAS[i] == miCasilla.getId() ){
-                casilla = i;
-                break;
+        String etiqueta = miCasilla.getTag().toString();
+        Toast toast=Toast.makeText(this,"Etiqueta: " + etiqueta,Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER,0,0);
+        toast.show();
+        if(etiqueta.equals("0")) {
+            if (partida == null) {
+                return;
             }
+            int casilla = 0;
+            for (int i = 0; i < 9; i++) {
+                if (CASILLAS[i] == miCasilla.getId()) {
+                    casilla = i;
+                    break;
+                }
+            }
+            partida.jugador = 1;
+            this.marca(casilla);
+            casilla = partida.ia();
+            this.marca(casilla);
+        }else{
+            toast=Toast.makeText(this,"CASILLA MARCADA!!",Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER,0,0);
+            toast.show();
         }
-        this.marca(casilla);
+
         /*
         Toast toast = Toast.makeText(this,"Has Presionado la casilla: " + casilla,Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER,0,0);
@@ -55,11 +69,18 @@ public class MainActivity extends Activity {
 
     private void marca(int num_casilla){
         ImageView imagen = (ImageView)(findViewById(CASILLAS[num_casilla]));
-        if(partida.jugador == 1){
-            imagen.setImageResource(R.drawable.circulo_48x48);
-        }else{
-            imagen.setImageResource(R.drawable.cruz_48x48);
-        }
+        //QUIZAS MARCA DEBERIA DEVOLVER UN BOOLEAN PARA QUE SI ES
+        //LA INTELIG ARTIFICIAL REPITA LA OPERACION Y SI ES UN HUMANO VUELVA A ELEGIR
+        //String tag = imagen.getTag().toString();
+
+           if (partida.jugador == 1) {
+               imagen.setImageResource(R.drawable.circulo_48x48);
+               imagen.setTag(1);
+           } else {
+               imagen.setImageResource(R.drawable.cruz_48x48);
+               imagen.setTag(2);
+           }
+
     }
 
     public void aJugar(View vista){

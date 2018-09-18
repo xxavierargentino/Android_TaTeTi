@@ -10,4 +10,8 @@
     <string name="circulos_gana">Circulos Ganan!</string>
     <string name="cruces_gana">Cruces Ganan!</string>
     <string name="empate">Empate!</string>
+    <string name="vacia_etiqueta">0</string>
+    <string name="circulo_etiqueta">1</string>
+    <string name="cruz_etiqueta">2</string>
+
 </resources>
